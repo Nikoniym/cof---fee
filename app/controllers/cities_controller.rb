@@ -10,7 +10,7 @@ class CitiesController < ApplicationController
   	@city = City.find_by(city_name: params[:id])
   	@faq=@city.city_faqs
     @events_tab = Firsttab.order(position: :asc)
-    @sevents =  @events_tab.first.events
+    @sevents =  @events_tab.first.events.order(:position)
  
     end
 

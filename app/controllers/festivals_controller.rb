@@ -10,7 +10,7 @@ class FestivalsController < ApplicationController
 		# @s = Firsttab.find_by_id(1)
 		# @e = Firsttab.find_by_id(2)
 		@events_tab = Firsttab.order(position: :asc)
-		@sevents =  @events_tab.first.events
+		@sevents =  @events_tab.first.events.order(:position)
 		# @sevents = @s.events
 		# @eevents = @e.events
 
