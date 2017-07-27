@@ -1,0 +1,13 @@
+.banner_wrapper.col-md-2
+  - if @banners.present?
+    .banner_list
+    - @banners.each_with_index do |banner, index|
+      .banner_list_item
+        = link_to banner.link do
+          - if index == 0
+            = image_tag banner.image_vertical.url(:thumb)
+          - if index == 1
+            = image_tag banner.image_square.url(:thumb)
+          - if index == 2
+            = image_tag banner.image_horizontal.url(:thumb)
+        .banner_close X

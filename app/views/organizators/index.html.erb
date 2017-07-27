@@ -1,0 +1,58 @@
+<% content_for :page_title_seo, @org.page_title_seo %>
+
+<% content_for :description_seo, @org.description_seo %>
+<% content_for :keywords_seo, @org.keywords_seo %>
+<% content_for :page_title, @org.page_title %>
+<div class="row no-margin padding-org">
+<div class="col-md-2">
+<%=image_tag @org.logo, class:'logo-org'%>
+</div>
+</div>
+<div class="row no-margin">
+<div class="col-md-4">
+<%=image_tag @org.side_pic, class:'org-pic'%>
+</div>
+<div class="col-md-8 font-org">
+<p class="font-org">
+<%=@org.some_text.html_safe%>
+</p>
+</div>
+</div>
+
+
+<div class="row no-margin padding-org">
+<div class="col-md-2">
+<%=image_tag @org.logo_2, class:'logo-org'%>
+</div>
+</div>
+<div class="row no-margin">
+<div class="col-md-4">
+<%=image_tag @org.side_pic_2, class:'org-pic'%>
+</div>
+<div class="col-md-8 font-org">
+<p class="font-org">
+<%=@org.some_text_2.html_safe%>
+</p>
+</div>
+</div>
+
+<div class="row nopad-cup-more join-org">
+<div  class="col-md-12 text-center">
+<a class="send"><p> КУПИТЬ БИЛЕТ</p></a>
+</div>
+</div>
+
+<div class="row no-margin">
+	<div class="col-md-4 col-xs-4">
+	<%=image_tag @org.bottm_pic, class:'org-pic small-org'%>
+	</div>
+		<div class="col-md-4 col-xs-4">
+	<%=image_tag @org.bottm_pic_2, class:'org-pic small-org'%>
+	</div>
+		<div class="col-md-4 col-xs-4">
+	<%=image_tag @org.bottm_pic_3, class:'org-pic small-org'%>
+	</div>
+</div>
+
+
+

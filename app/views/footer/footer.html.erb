@@ -1,0 +1,46 @@
+  	<div   class="row  ">
+  	<div class="col-md-12">
+  			<div class="footer">
+  			<div class="border-p">
+  			<p class="paprt-p">партнеры</p>
+  			</div>
+
+
+  			<div class="owl-carousel owl-theme sowl">
+  			<%@partners.each do |f|%>
+    <div class="item"><div id="<%=f.id%>" class="hexagon">
+    <%= image_tag f.avatar, class:'partner-img'%>
+  <div class="hexTop"></div>
+
+  <div class="hexBottom"></div>
+</div>
+
+<span class="span-border"></span>
+
+
+</div>
+ 
+<%end%>
+</div>
+<div class="hidden-cont">
+<%@partners.each do |f|%>
+
+<div id="<%=f.id%>" class="row partners-hidden">
+	<div class="col-md-12 ">
+	<div class="border-description">
+	<p class="partnerbody-p"><%= f.body%></p>
+    <%= link_to f.link.sub(/https?\:(\\\\|\/\/)(www.)?/,'').delete('/'), f.link, class: 'partnerbody-a', target: '_blank'%>
+	</div>
+	</div>
+</div>
+
+<%end%>
+</div>
+
+
+
+  			</div>
+  		
+  	</div>
+  
+  	</div>

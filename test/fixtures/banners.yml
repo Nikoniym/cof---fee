@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image: 
+  link: MyString
+  position: 1
+  main_page: false
+  fest_page: false
+  award_page: false
+  news_page: false
+  cup_page: false
+  organizers_page: false
+  contact_page: false
+
+two:
+  image: 
+  link: MyString
+  position: 1
+  main_page: false
+  fest_page: false
+  award_page: false
+  news_page: false
+  cup_page: false
+  organizers_page: false
+  contact_page: false

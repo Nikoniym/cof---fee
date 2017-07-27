@@ -1,0 +1,16 @@
+ <!DOCTYPE html>
+    <html>
+ <head>
+  <title>Admin</title>
+  <meta name="viewport" content="width=device-width" />
+  <meta charset="utf-8" />
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag '123', 'data-turbolinks-track': 'reload' %>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favicon_coffee.ico' %>
+ 
+</head>
+        <body class="admin-no-bg">
+            <%= yield %>
+        </body>
+    </html>

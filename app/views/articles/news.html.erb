@@ -1,0 +1,101 @@
+<% content_for :page_title_seo, @firstslide.page_title_seo %>
+
+<% content_for :description_seo, @firstslide.description_seo %>
+<% content_for :keywords_seo, @firstslide.keywords_seo %>
+<% content_for :page_title, @firstslide.page_title %>
+<div id='Fowl' class="owl-carousel owl-theme">
+
+
+
+    <div class="item">
+
+<figure class="snip1082">
+<%=image_tag  @firstslide.slide_1%>
+  <h3 class="hidden-xs">
+     <%=@firstslide.first_slide_title%>
+  </h3>
+
+  <div>
+<div class="wrap-flex">
+  <a class="mobile-link hidden-xs zxcv"  href="<%=@firstslide.slider_link_1%>"><%=truncate(@firstslide.first_slide_text, :length => 300)%></a>
+  <a class="mobile-link visible-xs zxcv"  href="<%=@firstslide.slider_link_1%>"><%=truncate(@firstslide.first_slide_text, :length => 50)%></a>
+  </div>
+  </div>
+</figure>
+    </div>
+
+        <div class="item">
+<figure class="snip1082"><%=image_tag @firstslide.slide_2%>
+  <h3 class="hidden-xs">
+     <%=@firstslide.second_slide_title%>
+  </h3>
+  <div>
+  <div class="wrap-flex">
+  <a class="mobile-link hidden-xs zxcv"  href="<%=@firstslide.slider_link_2%>"><%=truncate(@firstslide.second_slide_text, :length => 300)%></a>
+    <a class="mobile-link visible-xs zxcv"  href="<%=@firstslide.slider_link_2%>"><%=truncate(@firstslide.second_slide_text, :length => 50)%></a>
+    </div>
+  </div>
+</figure>
+    	
+    </div>
+
+        <div class="item">
+<figure class="snip1082"><%=image_tag @firstslide.slide_3%>
+  <h3 class="hidden-xs">
+   <%=@firstslide.third_slide_title%>
+  </h3>
+  <div>
+  <div class="wrap-flex">
+  <a class="mobile-link hidden-xs zxcv"  href="<%=@firstslide.slider_link_3%>"><%=truncate(@firstslide.third_slide_text, :length => 300)%></a>
+    <a class="mobile-link visible-xs zxcv"  href="<%=@firstslide.slider_link_3%>"><%=truncate(@firstslide.third_slide_text, :length => 50)%></a>
+    </div>
+  </div>
+</figure>
+    	
+    </div>
+
+</div>
+
+
+
+<div style="padding-left: 10px; padding-top: 16px;" class="row nop-nw">
+<% @articles.each do |f| %>
+
+      <div class="no-p-xs-a article-sq-all <%if f.big == true %> col-md-8 col-xs-8 <%else%> col-md-4 col-xs-4 <%end%>" >
+
+
+	<figure class="snip1080 h-f-new">
+	<%= image_tag f.avatar%>
+ 
+  <div class="news-dv-h">
+    <%=link_to   article_path(f) , class:'fucken-a news-fc' do%>
+        <%end%>
+        <div class="wrap-article mob-dif-news">
+  	 <h2 class="text-center v2v <%if f.big == true %>truncatebig <%else%>truncate<%end%>">
+     <%if f.big == true %>
+    <%=truncate(f.title, :length => 70) %>
+    <%else%>
+    <%=truncate(f.title, :length => 40) %>
+    <%end%>
+  </h2>
+  <h2 class="text-center h2h  <%if f.big == true %>truncatebig <%else%>truncate<%end%>">
+   <%=f.title%>
+  </h2>
+  </div>
+  <p style="padding-top: 5px;"><%=f.short%></p>
+  <div class="setbottom">
+  <p class="arty-date"> <%= f.date_of_event.try(:strftime, '%d.%m.%Y') %></p>
+  <%=link_to 'ПОДРОБНЕЕ', article_path(f), class:'more-arty'%>
+</div>
+  </div>
+</figure>
+
+
+
+
+
+</div>
+   
+ 
+<% end %>
+</div>

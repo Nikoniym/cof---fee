@@ -1,0 +1,38 @@
+  <div class="row no-margin edit-map">
+  <div class="col-md-12">
+  <%= form_for  @map do |f| %>
+  <p>
+  
+  <%= f.text_field :title %>
+  </p>
+
+    <%= image_tag @map.avatar.url %> </br>
+        <%= f.label "Удаить изображение" %>
+        <%= f.check_box(:delete_avatar)	  %> </br>
+    <%= f.label "Изменить аватар" %>
+    <%= f.file_field  :avatar  %>
+
+      <%= f.label "Тип заведения" %>
+    <%= f.text_field :type_of_shit %> </br>
+     <%= f.label "Имя участника" %>
+    <%= f.text_field :name_1 %> </br>
+    <%= f.label "Имя участника" %>
+     <%= f.text_field :name_2 %> </br>
+     <%= f.label "Имя участника" %>
+      <%= f.text_field :name_3 %> </br>
+ 
+  <%= image_tag @map.picture.url %> </br>
+    <%= f.label "Удаить изображение" %>
+    <%= f.check_box(:delete_picture)	  %> </br>
+    <%= f.label "Изменить фото" %>
+    <%= f.file_field  :picture  %>
+
+
+
+
+  <p>
+  <%= f.submit %>
+  </p>
+  <% end %>
+  </div>
+  </div>

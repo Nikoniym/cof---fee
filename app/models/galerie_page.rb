@@ -1,0 +1,2 @@
+class GaleriePage < ApplicationRecord
+end

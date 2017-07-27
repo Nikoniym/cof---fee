@@ -1,0 +1,2 @@
+class Qwerty < ApplicationRecord
+end

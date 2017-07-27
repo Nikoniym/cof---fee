@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fasebook: MyString
+  vkontakte: MyString
+  instagram: MyString
+  email: MyString
+  bay_ticket: MyString
+
+two:
+  fasebook: MyString
+  vkontakte: MyString
+  instagram: MyString
+  email: MyString
+  bay_ticket: MyString

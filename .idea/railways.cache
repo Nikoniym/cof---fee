@@ -1,0 +1,119 @@
+                   Prefix Verb   URI Pattern                            Controller#Action
+        new_admin_session GET    /admins/sign_in(.:format)              devise/sessions#new
+            admin_session POST   /admins/sign_in(.:format)              devise/sessions#create
+    destroy_admin_session DELETE /admins/sign_out(.:format)             devise/sessions#destroy
+       new_admin_password GET    /admins/password/new(.:format)         devise/passwords#new
+      edit_admin_password GET    /admins/password/edit(.:format)        devise/passwords#edit
+           admin_password PATCH  /admins/password(.:format)             devise/passwords#update
+                          PUT    /admins/password(.:format)             devise/passwords#update
+                          POST   /admins/password(.:format)             devise/passwords#create
+cancel_admin_registration GET    /admins/cancel(.:format)               devise/registrations#cancel
+   new_admin_registration GET    /admins/sign_up(.:format)              devise/registrations#new
+  edit_admin_registration GET    /admins/edit(.:format)                 devise/registrations#edit
+       admin_registration PATCH  /admins(.:format)                      devise/registrations#update
+                          PUT    /admins(.:format)                      devise/registrations#update
+                          DELETE /admins(.:format)                      devise/registrations#destroy
+                          POST   /admins(.:format)                      devise/registrations#create
+                 ckeditor        /ckeditor                              Ckeditor::Engine
+              rails_admin        /admin                                 RailsAdmin::Engine
+                     root GET    /                                      articles#index
+        russiancoffeenews GET    /russiancoffeenews(.:format)           articles#news
+              city_render GET    /city_render(.:format)                 cities#city_render
+     moscowcoffeefestival GET    /moscowcoffeefestival(.:format)        festivals#index
+         russiancoffeecup GET    /russiancoffeecup(.:format)            cities#index
+      russiancoffeeawards GET    /russiancoffeeawards(.:format)         awards#index
+                     city GET    /russiancoffeecup/:id(.:format)        cities#show
+                 articles GET    /articles(.:format)                    articles#index
+                          POST   /articles(.:format)                    articles#create
+              new_article GET    /articles/new(.:format)                articles#new
+             edit_article GET    /articles/:id/edit(.:format)           articles#edit
+                  article GET    /articles/:id(.:format)                articles#show
+                          PATCH  /articles/:id(.:format)                articles#update
+                          PUT    /articles/:id(.:format)                articles#update
+                          DELETE /articles/:id(.:format)                articles#destroy
+                   awards GET    /awards(.:format)                      awards#index
+                          POST   /awards(.:format)                      awards#create
+                new_award GET    /awards/new(.:format)                  awards#new
+               edit_award GET    /awards/:id/edit(.:format)             awards#edit
+                    award GET    /awards/:id(.:format)                  awards#show
+                          PATCH  /awards/:id(.:format)                  awards#update
+                          PUT    /awards/:id(.:format)                  awards#update
+                          DELETE /awards/:id(.:format)                  awards#destroy
+                 galeries GET    /galeries(.:format)                    galeries#index
+                          POST   /galeries(.:format)                    galeries#create
+               new_galery GET    /galeries/new(.:format)                galeries#new
+              edit_galery GET    /galeries/:id/edit(.:format)           galeries#edit
+                   galery GET    /galeries/:id(.:format)                galeries#show
+                          PATCH  /galeries/:id(.:format)                galeries#update
+                          PUT    /galeries/:id(.:format)                galeries#update
+                          DELETE /galeries/:id(.:format)                galeries#destroy
+   timetable_tab_festival GET    /festivals/:id/timetable_tab(.:format) festivals#timetable_tab
+                festivals GET    /festivals(.:format)                   festivals#index
+                          POST   /festivals(.:format)                   festivals#create
+             new_festival GET    /festivals/new(.:format)               festivals#new
+            edit_festival GET    /festivals/:id/edit(.:format)          festivals#edit
+                 festival GET    /festivals/:id(.:format)               festivals#show
+                          PATCH  /festivals/:id(.:format)               festivals#update
+                          PUT    /festivals/:id(.:format)               festivals#update
+                          DELETE /festivals/:id(.:format)               festivals#destroy
+                   cities GET    /cities(.:format)                      cities#index
+                          POST   /cities(.:format)                      cities#create
+                 new_city GET    /cities/new(.:format)                  cities#new
+                edit_city GET    /cities/:id/edit(.:format)             cities#edit
+                          GET    /cities/:id(.:format)                  cities#show
+                          PATCH  /cities/:id(.:format)                  cities#update
+                          PUT    /cities/:id(.:format)                  cities#update
+                          DELETE /cities/:id(.:format)                  cities#destroy
+             organizators GET    /organizators(.:format)                organizators#index
+                          POST   /organizators(.:format)                organizators#create
+          new_organizator GET    /organizators/new(.:format)            organizators#new
+         edit_organizator GET    /organizators/:id/edit(.:format)       organizators#edit
+              organizator GET    /organizators/:id(.:format)            organizators#show
+                          PATCH  /organizators/:id(.:format)            organizators#update
+                          PUT    /organizators/:id(.:format)            organizators#update
+                          DELETE /organizators/:id(.:format)            organizators#destroy
+                 contacts GET    /contacts(.:format)                    contacts#index
+                          POST   /contacts(.:format)                    contacts#create
+              new_contact GET    /contacts/new(.:format)                contacts#new
+             edit_contact GET    /contacts/:id/edit(.:format)           contacts#edit
+                  contact GET    /contacts/:id(.:format)                contacts#show
+                          PATCH  /contacts/:id(.:format)                contacts#update
+                          PUT    /contacts/:id(.:format)                contacts#update
+                          DELETE /contacts/:id(.:format)                contacts#destroy
+                     maps GET    /maps(.:format)                        maps#index
+                          POST   /maps(.:format)                        maps#create
+                  new_map GET    /maps/new(.:format)                    maps#new
+                 edit_map GET    /maps/:id/edit(.:format)               maps#edit
+                      map GET    /maps/:id(.:format)                    maps#show
+                          PATCH  /maps/:id(.:format)                    maps#update
+                          PUT    /maps/:id(.:format)                    maps#update
+                          DELETE /maps/:id(.:format)                    maps#destroy
+            subscriptions GET    /subscriptions(.:format)               subscriptions#index
+                          POST   /subscriptions(.:format)               subscriptions#create
+         new_subscription GET    /subscriptions/new(.:format)           subscriptions#new
+        edit_subscription GET    /subscriptions/:id/edit(.:format)      subscriptions#edit
+             subscription GET    /subscriptions/:id(.:format)           subscriptions#show
+                          PATCH  /subscriptions/:id(.:format)           subscriptions#update
+                          PUT    /subscriptions/:id(.:format)           subscriptions#update
+                          DELETE /subscriptions/:id(.:format)           subscriptions#destroy
+
+Routes for Ckeditor::Engine:
+        pictures GET    /pictures(.:format)             ckeditor/pictures#index
+                 POST   /pictures(.:format)             ckeditor/pictures#create
+         picture DELETE /pictures/:id(.:format)         ckeditor/pictures#destroy
+attachment_files GET    /attachment_files(.:format)     ckeditor/attachment_files#index
+                 POST   /attachment_files(.:format)     ckeditor/attachment_files#create
+ attachment_file DELETE /attachment_files/:id(.:format) ckeditor/attachment_files#destroy
+
+Routes for RailsAdmin::Engine:
+  dashboard GET         /                                      rails_admin/main#dashboard
+      index GET|POST    /:model_name(.:format)                 rails_admin/main#index
+        new GET|POST    /:model_name/new(.:format)             rails_admin/main#new
+     export GET|POST    /:model_name/export(.:format)          rails_admin/main#export
+bulk_delete POST|DELETE /:model_name/bulk_delete(.:format)     rails_admin/main#bulk_delete
+bulk_action POST        /:model_name/bulk_action(.:format)     rails_admin/main#bulk_action
+   dropzone GET|POST    /:model_name/:id/dropzone(.:format)    rails_admin/main#dropzone
+       show GET         /:model_name/:id(.:format)             rails_admin/main#show
+       edit GET|PUT     /:model_name/:id/edit(.:format)        rails_admin/main#edit
+     delete GET|DELETE  /:model_name/:id/delete(.:format)      rails_admin/main#delete
+show_in_app GET         /:model_name/:id/show_in_app(.:format) rails_admin/main#show_in_app

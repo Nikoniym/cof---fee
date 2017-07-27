@@ -1,0 +1,63 @@
+<% content_for :page_title_seo, @gal.page_title_seo %>
+
+<% content_for :description_seo, @gal.description_seo %>
+<% content_for :keywords_seo, @gal.keywords_seo %>
+<% content_for :page_title, @gal.page_title %>
+
+<div id='Fowl' class="owl-carousel owl-theme">
+
+<%@slider.each do |f|%>
+
+    <div class="item">
+
+<figure class="snip1082">
+<%=image_tag f.avatar%>
+  <h3 class="hidden-xs">
+   <%=f.galerie.title%>
+  </h3>
+
+  <div>
+  <div class="wrap-flex">
+  <a class="hidden-xs" href="#">   <%=f.galerie.body%></a>
+<a class="mobile-link visible-xs zxcv" href="#">
+  <%=truncate(f.galerie.body, :length => 50) %>
+   </a>
+   </div>
+  </div>
+</figure>
+    </div>
+
+<%end%>
+
+
+</div>
+
+<div style="" class="row padding-9">
+<%@galeries.each do |f|%>
+<%=link_to galery_path(f) do%>
+<div style="padding-bottom: 30px;" class="col-md-6 col-xs-6 nopfor1qa">
+  <figure class="snip1080">
+  <%f.photos.last(1).each do |p|%>
+  <%= image_tag p.avatar%>
+ <%end%>
+  <div class="q1s">
+  <div class="wrap-article">
+     <h2 class="text-center v2v truncate mid ">
+   
+    <%=truncate(f.title, :length => 50) %>
+  
+  </h2>
+
+  <h2 class="text-center h2h  truncate mid">
+   <%=f.title%>
+  </h2>
+  </div>
+  <p style="padding-top: 5px;"><%=f.body%></p>
+
+  </div>
+</figure>
+</div>
+<%end%>
+<%end%>
+
+</div>

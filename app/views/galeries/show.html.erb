@@ -1,0 +1,46 @@
+<% content_for :page_title_seo, @galerie.page_title_seo %>
+
+<% content_for :description_seo, @galerie.description_seo %>
+<% content_for :keywords_seo, @galerie.keywords_seo %>
+<% content_for :page_title, @galerie.page_title %>
+<div id='Fowl' class="owl-carousel owl-theme">
+
+<%@slider.each do |f|%>
+
+    <div class="item">
+
+<figure class="snip1082">
+<%=image_tag f.avatar%>
+  <h3 class="hidden-xs">
+   <%=f.galerie.title%>
+  </h3>
+
+  <div>
+  <div class="wrap-flex">
+  <a class="hidden-xs" href="#">   <%=f.galerie.body%></a>
+  <a class="mobile-link visible-xs zxcv" href="#">
+  <%=truncate(f.galerie.body, :length => 50) %>
+   </a>
+   </div>
+  </div>
+</figure>
+    </div>
+
+<%end%>
+
+
+</div>
+
+
+
+<div  class="row padding-9"  >
+  <div id="gallery" style="display:none;>
+    <%@photos.each do |f|%>
+        <img alt="<%= f.avatar_file_name %>" src="<%= f.avatar.url(:medium) %>" data-image="<%= f.avatar.url %>">
+    <%end%>
+  </div>
+
+
+</div>
+
+

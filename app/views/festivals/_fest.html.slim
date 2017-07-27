@@ -1,0 +1,147 @@
+div
+  .border-p
+    p.paprt-p кофейни
+.row.visible-xs style=("padding-top: 20px;")
+  .col-md-12.no-pfor-12
+    div
+      .container.mobile-cont
+        - @cofs.each_slice(5) do |f|
+          .jq-width
+            - f.each do |f|
+              .item-p style=""
+                .hexagon id="#{f.id}"
+                  = image_tag f.avatar.url(:thumb), class:'partner-img'
+                  .hexTop
+                  .hexBottom
+                span.span-border
+          .hidden-cont
+            - @cofs.each do |f|
+              .row.partners-hidden id="#{f.id}"
+                .col-md-12.mobile-shitty-content
+                  .border-description
+                    p.partnerbody-p= f.body
+                    = link_to f.link.sub(/https?\:(\\\\|\/\/)(www.)?/,'').delete('/'), f.link, class: 'partnerbody-a', target: '_blank'
+.container.hidden-xs
+  - @cofs.each_slice(7) do |f|
+    .row
+      - f.each do |f|
+        .item-p style=""
+          .hexagon id="#{f.id}"
+            = image_tag f.avatar.url(:thumb), class:'partner-img'
+            .hexTop
+            .hexBottom
+          span.span-border
+    .hidden-cont
+      - @cofs.each do |f|
+        .row.partners-hidden id="#{f.id}"
+          .col-md-12
+            .border-description
+              p.partnerbody-p= f.body
+              = link_to f.link.sub(/https?\:(\\\\|\/\/)(www.)?/,'').delete('/'), f.link, class: 'partnerbody-a', target: '_blank'
+div
+  .border-p
+    p.paprt-p партнеры
+.row.visible-xs style=("padding-top: 20px;")
+  .col-md-12.no-pfor-12
+    div
+      .container.mobile-cont
+        - @partners.each_slice(5) do |f|
+          .jq-width
+            - f.each do |f|
+              .item-p style=""
+                .hexagon id="#{f.id}"
+                  = image_tag f.avatar.url(:thumb), class:'partner-img'
+                  .hexTop
+                  .hexBottom
+                span.span-border
+          .hidden-cont
+            - @partners.each do |f|
+              .row.partners-hidden id="#{f.id}"
+                .col-md-12.mobile-shitty-content
+                  .border-description
+                    p.partnerbody-p= f.body
+                    = link_to f.link.sub(/https?\:(\\\\|\/\/)(www.)?/,'').delete('/'), f.link, class: 'partnerbody-a', target: '_blank'
+.container.hidden-xs
+  - @partners.each_slice(7) do |f|
+    .row
+      - f.each do |f|
+        .item-p style=""
+          .hexagon id="#{f.id}"
+            = image_tag f.avatar.url(:thumb), class:'partner-img'
+            .hexTop
+            .hexBottom
+          span.span-border
+    .hidden-cont
+      - @partners.each do |f|
+        .row.partners-hidden id="#{f.id}"
+          .col-md-12
+            .border-description
+              p.partnerbody-p= f.body
+              = link_to f.link.sub(/https?\:(\\\\|\/\/)(www.)?/,'').delete('/'), f.link, class: 'partnerbody-a', target: '_blank'
+div
+  .border-p
+    p.paprt-p участники
+.row.visible-xs style=("padding-top: 20px;")
+  .col-md-12.no-pfor-12
+    div
+      .container.mobile-cont
+        - @mem.each_slice(5) do |f|
+          .jq-width
+            - f.each do |f|
+              .item-p style=""
+                .hexagon id="#{f.id}"
+                  = image_tag f.avatar.url(:thumb), class:'partner-img'
+                  .hexTop
+                  .hexBottom
+                span.span-border
+          .hidden-cont
+            - @mem.each do |f|
+              .row.partners-hidden id="#{f.id}"
+                .col-md-12.mobile-shitty-content
+                  .border-description
+                    p.partnerbody-p= f.body
+                    = link_to f.link.sub(/https?\:(\\\\|\/\/)(www.)?/,'').delete('/'), f.link, class: 'partnerbody-a', target: '_blank'
+.container.hidden-xs
+  - @mem.each_slice(7) do |f|
+    .row
+      - f.each do |f|
+        .item-p style=""
+          .hexagon id="#{f.id}"
+            = image_tag f.avatar.url(:thumb), class:'partner-img'
+            .hexTop
+            .hexBottom
+          span.span-border
+    .hidden-cont
+      - @mem.each do |f|
+        .row.partners-hidden id="#{f.id}"
+          .col-md-12
+            .border-description
+              p.partnerbody-p= f.body
+              = link_to f.link.sub(/https?\:(\\\\|\/\/)(www.)?/,'').delete('/'), f.link, class: 'partnerbody-a', target: '_blank'
+div
+  .border-p
+    p.paprt-p карта
+.row style=("padding-bottom: 30px;")
+  .col-md-5.visible-xs.thin-font
+    h3.adrees-map АДРЕС
+    p.adress-p style=("width: 246px;") = @fest.adress
+  .col-md-7
+    a href="http://maps.google.com/?q=#{@fest.adress.split('РОССИЯ,')[1]}" target="_blank"
+      #map
+  .col-md-5.thin-font.hidden-xs
+    h3.adrees-map АДРЕС
+    p.adress-p style=("width: 246px;") = @fest.adress
+div
+  .border-p
+    p.paprt-p FAQ
+.row style=("padding-bottom: 50px;")
+  .col-md-12
+    - @faq.each do |f|
+      .article-faq
+        .item-sh.row
+          .col-xs-12
+            p.title= f.question
+        .description-faq.row
+          .col-xs-12
+            p.pubdate
+              | \- #{f.answer}

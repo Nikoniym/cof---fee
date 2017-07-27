@@ -1,0 +1,2 @@
+class Secondtab < ApplicationRecord
+end

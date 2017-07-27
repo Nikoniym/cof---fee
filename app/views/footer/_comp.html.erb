@@ -1,0 +1,180 @@
+  	
+  <div class="">
+        <div class="border-p">
+        <p class="paprt-p">лучшая кофейня <%=@cup.year%> </p>
+        </div>
+  </div>
+
+  <div class="row">
+  <div class="col-md-2 col-xs-3 no-p-for-p height-for-e">
+  
+    <p class="coffee-old">кофейня: </p>
+  <p class="coffee-t-p"><%=@cup.shop_title%></p>
+  <p class="name-w-p"><%= @cup.name_1%></p>
+  <p class="name-w-p"><%= @cup.name_2%></p>
+  <p class="name-w-p"><%= @cup.name_3%></p>
+  <%=image_tag @cup.shop_logo,class:'pic-1-com-ex'%>
+  </div>
+
+   <div class="col-md-4 col-xs-3 height-for-e">
+   <%=image_tag @cup.shop_pic,class:'pic-1-com'%>
+  </div>
+
+  <div class="col-md-6 col-xs-6 height-for-e">
+  <%=image_tag @cup.shop_pic_2,class:'pic-1-com'%>
+  </div>
+  </div>
+
+
+
+
+
+
+    <div style="padding-top: 10px; padding-bottom: 10px;"   class="row  hidden-xs">
+  	<div class="col-md-12">
+  			<div class="footer">
+  			<div class="border-p">
+  			<p class="paprt-p">финалисты</p>
+  			</div>
+
+
+
+
+        <div class="container mobile-cont">
+        <%@champ.each_slice(7) do |f|%>
+        <div class="row">
+        <%f.each do |f|%>
+    <div style="" class="item-p"><div id="<%=f.id%>" class="hexagon">
+    <%= image_tag f.logo, class:'partner-img'%>
+  <div class="hexTop"></div>
+
+  <div class="hexBottom"></div>
+</div>
+
+<span class="span-border"></span>
+
+
+</div>
+
+
+ 
+<%end%>
+
+</div>
+
+<div class="hidden-cont">
+<%@champ.each do |f|%>
+
+<div id="<%=f.id%>" class="row partners-hidden">
+  <div class="col-md-12 ">
+  <div class="border-description">
+  <div  class="row cl-p-r">
+  <div class="f-l-div">
+  <p class="coffee-old">кофейня: </p>
+  <p class="coffee-t-p"><%=f.title%></p>
+  <p class="name-w-p"><%=f.name_1%></p>
+  <p class="name-w-p"><%=f.name_2%></p>
+  <p class="name-w-p"><%=f.name_3%></p>
+  </div>
+  <div class="f-l-div-i">
+  <%=image_tag f.pic, class:'pic-winner-old'%>
+  </div>
+  </div>
+  </div>
+  </div>
+</div>
+
+<%end%>
+</div>
+
+
+
+<%end%>
+</div>
+
+
+
+
+
+
+
+  			</div>
+  		
+  	</div>
+  
+  	</div>
+
+    <div style="padding-top: 20px;"   class="row  visible-xs">
+    <div class="col-md-12 no-pfor-12">
+        <div class="footer">
+        <div class="border-p">
+        <p class="paprt-p">финалисты</p>
+        </div>
+
+
+
+
+        <div class="container mobile-cont">
+        <%@champ.each_slice(5) do |f|%>
+        <div class="jq-width">
+
+        <%f.each do |f|%>
+    <div style="" class="item-p"><div id="<%=f.id%>" class="hexagon">
+    <%= image_tag f.logo, class:'partner-img'%>
+  <div class="hexTop"></div>
+
+  <div class="hexBottom"></div>
+</div>
+
+<span class="span-border"></span>
+
+
+</div>
+
+
+ 
+<%end%>
+
+</div>
+
+<div class="hidden-cont">
+<%@champ.each do |f|%>
+
+<div id="<%=f.id%>" class="row partners-hidden">
+  <div class="col-md-12 mobile-shitty-content">
+  <div class="border-description">
+  <div  class="row cl-p-r">
+  <div class="f-l-div">
+  <p class="coffee-old">кофейня: </p>
+  <p class="coffee-t-p"><%=f.title%></p>
+  <p class="name-w-p"><%=f.name_1%></p>
+  <p class="name-w-p"><%=f.name_2%></p>
+  <p class="name-w-p"><%=f.name_3%></p>
+  </div>
+  <div class="f-l-div-i">
+  <%=image_tag f.pic, class:'pic-winner-old'%>
+  </div>
+  </div>
+  </div>
+  </div>
+</div>
+
+<%end%>
+</div>
+
+
+
+<%end%>
+</div>
+
+
+
+
+
+
+
+        </div>
+      
+    </div>
+  
+    </div>

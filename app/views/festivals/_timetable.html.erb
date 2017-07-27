@@ -1,0 +1,20 @@
+<div class="">
+  <div class="border-p">
+    <p class="paprt-p">расписание</p>
+  </div>
+</div>
+<div class="no-p-m single-mar-t" class="col-md-12">
+  <ul class="nav nav-tabs" role="tablist">
+    <%	 @events_tab.each_with_index do |tab, index| %>
+        <li class="<%= 'active' if index == 0 %> <%= 'bord' if index != 0 %>">
+          <%= link_to tab.title, timetable_tab_festival_path(tab), class: "tab-a a-m", remote: true %>
+        </li>
+    <%	 end %>
+  </ul>
+  <!-- Tab panes -->
+  <div class="events">
+    <%= render 'festivals/events'%>
+  </div>
+
+
+</div>

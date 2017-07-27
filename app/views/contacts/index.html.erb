@@ -1,0 +1,43 @@
+<% content_for :page_title_seo, @con.page_title_seo %>
+
+<% content_for :description_seo, @con.description_seo %>
+<% content_for :keywords_seo, @con.keywords_seo %>
+<% content_for :page_title, @con.page_title %>
+<div class="row no-margin">
+<%@contacts.each do |f|%>
+<div class="col-md-6">
+
+<div style="width: 100%; overflow: hidden;padding: 40px;" class="">
+<div class="">
+
+<figure class=" cont-fig">
+<div class="z-overlay">
+ </div>
+
+<%=image_tag f.avatar, class:'cont-img'%>
+ 
+
+  <div class="conta-q" style="   ">
+  <p class="name-cotn"><%=f.name%></p>
+    <p class="ex-cont"><%=f.work%></p>
+      <p class="cont-params z1"><%=f.phone_1%></p>
+        <p class="cont-params z1"><%=f.phone_2%></p>
+          <p class="cont-params"><%=f.mail%></p>
+          </div>
+    
+</figure>
+
+
+
+
+</div>
+</div>
+
+</div>
+<%end%>
+
+
+
+
+
+</div>

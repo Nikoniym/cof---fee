@@ -1,0 +1,487 @@
+<% content_for :page_title, @fest.page_title %>
+<% content_for :page_title_seo, @fest.page_title_seo %>
+
+<% content_for :description_seo, @fest.description_seo %>
+<% content_for :keywords_seo, @fest.keywords_seo %>
+
+<div id='Fowl' class="owl-carousel owl-theme">
+
+
+
+    <div class="item">
+
+<figure class="snip1082"><%=image_tag @fest.slide_1%>
+  <h3 class="hidden-xs">
+    <%=  @fest.first_slide_title %>
+    
+  </h3>
+
+  <div>
+  <div class="wrap-flex">
+  <a class="mobile-link hidden-xs" href="<%=@fest.slider_link_1%>"> <%=  truncate(@fest.first_slide_text, :length => 300) %></a>
+    <a class="mobile-link  visible-xs"  href="<%=@fest.slider_link_1%>"><%=truncate(@fest.first_slide_text, :length => 50) %></a>
+    </div>
+  </div>
+</figure>
+    </div>
+
+        <div class="item">
+<figure class="snip1082"><%=image_tag @fest.slide_2%>
+  <h3 class="hidden-xs">
+    <%=  @fest.second_slide_title %>
+  </h3>
+  <div>
+  <div class="wrap-flex">
+  <a class="mobile-link hidden-xs" href="<%=@fest.slider_link_2%>"><%=  truncate(@fest.second_slide_text, :length => 300) %></a>
+  <a class="mobile-link  visible-xs"  href="<%=@fest.slider_link_2%>"><%=truncate(@fest.second_slide_text, :length => 50) %></a>
+  </div>
+  </div>
+</figure>
+    	
+    </div>
+
+        <div class="item">
+<figure class="snip1082"><%=image_tag @fest.slide_3%>
+  <h3 class="hidden-xs">
+     <%=  @fest.third_slide_title %>
+  </h3>
+  <div>
+  <div class="wrap-flex">
+  <a class="mobile-link hidden-xs" href="<%=@fest.slider_link_3%>"><%=  truncate(@fest.third_slide_text, :length => 300) %></a>
+  <a class="mobile-link  visible-xs"  href="<%=@fest.slider_link_3%>"><%=truncate(@fest.third_slide_text, :length => 50) %></a>
+  </div>
+  </div>
+</figure>
+    	
+    </div>
+
+</div>
+
+<div style="padding-top: 20px;" class="row no-margin">
+  <div class="hidden-xs">
+        <div class="border-p">
+        <p class="paprt-p">описание</p>
+        </div>
+  </div>
+  <div class="col-md-12 descy hidden-xs">
+  <%=@fest.some_text.html_safe %>
+  </div>
+
+
+
+<div class="col-xs-12 descy m-s-down visible-xs">
+  <%=@fest.some_text.html_safe %>
+  </div>
+<div class="toggle-text-mobile visible-xs">
+<i class="fa fa-caret-down m-d" aria-hidden="true"></i>
+<i class="fa fa-caret-up m-u" aria-hidden="true"></i>
+</div>
+
+
+<div class="col-md-12">
+  <div style="text-align: center; padding-bottom: 40px;">
+    <a target="_blank" href="<%=@fest.fb_link %>" class="join-fb"><p><i class="fa fa-facebook" aria-hidden="true"></i> подписаться</p></a>
+    <a target="_blank" href="<%=@fest.vk_link %>" class="join-vk"><p><i class="fa fa-vk" aria-hidden="true"></i> подписаться</p></a>
+  </div>
+</div>
+<%= render 'timetable'%>
+
+<div style="padding-top: 50px" class="">
+      <div class="border-p">
+      <p class="paprt-p">карта</p>
+      </div>
+</div>
+
+<div style="padding-bottom: 60px;" class="map-svg">
+<div class="row">
+<div class="col-md-8 col-xs-8">
+<div class="map-png">
+
+<%=image_tag 'sx.png'%>
+
+<div <%if @map_sq_1.present?%> id='<%=@map_sq_1.id%>'<%end%> class="sq-1">
+
+<div class="progress">
+
+</div>
+ 
+</div>
+
+<div <%if @map_sq_2.present?%> id='<%=@map_sq_2.id%>'<%end%> class="sq-2">
+<div class="progress"></div>
+</div>
+
+<div <%if @map_sq_3.present?%> id='<%=@map_sq_3.id%>'<%end%> class="sq-3">
+<div class="progress"></div>
+</div>
+
+<div <%if @map_sq_4.present?%> id='<%=@map_sq_4.id%>'<%end%> class="sq-4">
+<div class="progress"></div>
+</div>
+
+<div <%if @map_sq_5.present?%> id='<%=@map_sq_5.id%>'<%end%> class="sq-5">
+<div class="progress"></div>
+</div>
+
+
+
+<div <%if @map_sq_short_1.present?%> id='<%=@map_sq_short_1.id%>'<%end%> class="sq-short-1">
+  <div class="progress"></div>
+</div>
+<div <%if @map_sq_short_new_1.present?%> id='<%=@map_sq_short_new_1.id%>'<%end%> class="sq-short-new-1">
+  <div class="progress"></div>
+</div>
+<div <%if @map_sq_short_2.present?%> id='<%=@map_sq_short_2.id%>'<%end%> class="sq-short-2">
+  <div class="progress"></div>
+</div>
+<div <%if @map_sq_short_3.present?%> id='<%=@map_sq_short_3.id%>'<%end%> class="sq-short-3">
+  <div class="progress"></div>
+</div>
+<div <%if @map_sq_short_4.present?%> id='<%=@map_sq_short_4.id%>'<%end%> class="sq-short-4">
+  <div class="progress"></div>
+</div>
+<div <%if @map_sq_short_5.present?%> id='<%=@map_sq_short_5.id%>'<%end%> class="sq-short-5">
+  <div class="progress"></div>
+</div>
+<div <%if @map_sq_short_new_2.present?%> id='<%=@map_sq_short_new_2.id%>'<%end%> class="sq-short-new-2">
+  <div class="progress"></div>
+</div>
+<div <%if @map_sq_short_6.present?%> id='<%=@map_sq_short_6.id%>'<%end%> class="sq-short-6">
+  <div class="progress"></div>
+</div>
+
+<div <%if @map_sq_short_7.present?%> id='<%=@map_sq_short_7.id%>'<%end%> class="sq-short-7">
+  <div class="progress"></div>
+</div>
+<div <%if @map_sq_short_8.present?%> id='<%=@map_sq_short_8.id%>'<%end%> class="sq-short-8">
+  <div class="progress"></div>
+</div>
+<div <%if @map_sq_short_9.present?%> id='<%=@map_sq_short_9.id%>'<%end%> class="sq-short-9">
+  <div class="progress"></div>
+</div>
+
+<div <%if @map_sq_short_10.present?%> id='<%=@map_sq_short_10.id%>'<%end%> class="sq-short-10">
+  <div class="progress"></div>
+</div>
+
+<div <%if @map_sq_short_11.present?%> id='<%=@map_sq_short_11.id%>'<%end%> class="sq-short-11">
+  <div class="progress"></div>
+</div>
+<div <%if @map_sq_short_12.present?%> id='<%=@map_sq_short_12.id%>'<%end%> class="sq-short-12">
+  <div class="progress"></div>
+</div>
+
+
+<div <%if @map_sq_short_13.present?%> id='<%=@map_sq_short_13.id%>'<%end%> class="sq-short-13">
+  <div class="progress"></div>
+</div>
+<div <%if @map_sq_short_14.present?%> id='<%=@map_sq_short_14.id%>'<%end%> class="sq-short-14">
+  <div class="progress"></div>
+</div>
+<div <%if @map_sq_short_15.present?%> id='<%=@map_sq_short_15.id%>'<%end%> class="sq-short-15">
+  <div class="progress"></div>
+</div>
+
+<div <%if @map_sq_short_16.present?%> id='<%=@map_sq_short_16.id%>'<%end%> class="sq-short-16">
+  <div class="progress"></div>
+</div>
+
+<div <%if @map_sq_short_17.present?%> id='<%=@map_sq_short_17.id%>'<%end%> class="sq-short-17">
+  <div class="progress"></div>
+</div>
+<div <%if @map_sq_short_18.present?%> id='<%=@map_sq_short_18.id%>'<%end%> class="sq-short-18">
+  <div class="progress"></div>
+</div>
+
+
+
+
+
+
+<div <%if @map_big_sq_1.present?%> id='<%=@map_big_sq_1.id%>'<%end%> class="big-sq-1">
+<div class="progress"></div>
+</div>
+
+<div <%if @map_big_sq_2.present?%> id='<%=@map_big_sq_2.id%>'<%end%> class="big-sq-2">
+<div class="progress"></div>
+</div>
+
+<div <%if @map_big_sq_3.present?%> id='<%=@map_big_sq_3.id%>'<%end%> class="big-sq-3">
+<div class="progress"></div>
+</div>
+<div <%if @map_big_sq_4.present?%> id='<%=@map_big_sq_4.id%>'<%end%> class="big-sq-4">
+<div class="progress"></div>
+</div>
+
+<div <%if @map_big_sq_5.present?%> id='<%=@map_big_sq_5.id%>'<%end%> class="big-sq-5">
+<div class="progress"></div>
+</div>
+
+<div <%if @map_sq_6.present?%> id='<%=@map_sq_6.id%>'<%end%> class="sq-6">
+<div class="progress"></div>
+</div>
+<div <%if @map_sq_7.present?%> id='<%=@map_sq_7.id%>'<%end%> class="sq-7">
+<div class="progress"></div>
+</div>
+
+<div <%if @map_sq_8.present?%> id='<%=@map_sq_8.id%>'<%end%> class="sq-8">
+<div class="progress"></div>
+</div>
+
+<div <%if @map_sq_9.present?%> id='<%=@map_sq_9.id%>'<%end%> class="sq-9">
+<div class="progress"></div>
+</div>
+
+
+<div <%if @map_sq_10.present?%> id='<%=@map_sq_10.id%>'<%end%> class="sq-10">
+<div class="progress"></div>
+</div>
+<div <%if @map_sq_11.present?%> id='<%=@map_sq_11.id%>'<%end%> class="sq-11">
+<div class="progress"></div>
+</div>
+<div <%if @map_sq_12.present?%> id='<%=@map_sq_12.id%>'<%end%> class="sq-12">
+<div class="progress"></div>
+</div>
+<div <%if @map_sq_13.present?%> id='<%=@map_sq_13.id%>'<%end%> class="sq-13">
+<div class="progress"></div>
+</div>
+<div <%if @map_sq_14.present?%> id='<%=@map_sq_14.id%>'<%end%> class="sq-14">
+<div class="progress"></div>
+</div>
+
+<div <%if @map_sq_15.present?%> id='<%=@map_sq_15.id%>'<%end%> class="sq-15">
+<div class="progress"></div>
+</div>
+<div <%if @map_sq_16.present?%> id='<%=@map_sq_16.id%>'<%end%> class="sq-16">
+<div class="progress"></div>
+</div>
+
+
+
+<div <%if @map_sq_short_19.present?%> id='<%=@map_sq_short_19.id%>'<%end%> class="sq-short-19">
+  <div  class="progress"></div>
+</div>
+<div <%if @map_sq_short_20.present?%> id='<%=@map_sq_short_20.id%>'<%end%>  class="sq-short-20">
+  <div class="progress"></div>
+</div>
+<div <%if @map_sq_short_21.present?%> id='<%=@map_sq_short_21.id%>'<%end%> class="sq-short-21">
+  <div class="progress"></div>
+</div>
+
+<div <%if @map_sq_short_22.present?%> id='<%=@map_sq_short_22.id%>'<%end%> class="sq-short-22">
+  <div class="progress"></div>
+</div>
+
+<div <%if @map_sq_short_23.present?%> id='<%=@map_sq_short_23.id%>'<%end%> class="sq-short-23">
+  <div class="progress"></div>
+</div>
+<div <%if @map_sq_short_24.present?%> id='<%=@map_sq_short_24.id%>'<%end%> class="sq-short-24">
+  <div class="progress"></div>
+</div>
+<div <%if @map_sq_short_25.present?%> id='<%=@map_sq_short_25.id%>'<%end%> class="sq-short-25">
+  <div class="progress"></div>
+</div>
+
+
+<div <%if @map_sq_short_26.present?%> id='<%=@map_sq_short_26.id%>'<%end%> class="sq-short-26">
+  <div class="progress"></div>
+</div>
+<div <%if @map_sq_short_27.present?%> id='<%=@map_sq_short_27.id%>'<%end%> class="sq-short-27">
+  <div class="progress"></div>
+</div>
+<div <%if @map_sq_short_28.present?%> id='<%=@map_sq_short_28.id%>'<%end%> class="sq-short-28">
+  <div class="progress"></div>
+</div>
+
+<div <%if @map_sq_short_29.present?%> id='<%=@map_sq_short_29.id%>'<%end%> class="sq-short-29">
+  <div class="progress"></div>
+</div>
+
+<div <%if @map_sq_short_30.present?%> id='<%=@map_sq_short_30.id%>'<%end%> class="sq-short-30">
+  <div class="progress"></div>
+</div>
+<div <%if @map_sq_short_31.present?%> id='<%=@map_sq_short_31.id%>'<%end%> class="sq-short-31">
+  <div class="progress"></div>
+</div>
+<div <%if @map_sq_short_32.present?%> id='<%=@map_sq_short_32.id%>'<%end%> class="sq-short-32">
+  <div class="progress"></div>
+</div>
+
+<div <%if @map_sq_short_33.present?%> id='<%=@map_sq_short_33.id%>'<%end%> class="sq-short-33">
+  <div class="progress"></div>
+</div>
+<div <%if @map_sq_short_34.present?%> id='<%=@map_sq_short_34.id%>'<%end%> class="sq-short-34">
+  <div class="progress"></div>
+</div>
+<div <%if @map_sq_short_35.present?%> id='<%=@map_sq_short_35.id%>'<%end%> class="sq-short-35">
+  <div class="progress"></div>
+</div>
+
+<div <%if @map_sq_short_36.present?%> id='<%=@map_sq_short_36.id%>'<%end%> class="sq-short-36">
+  <div class="progress"></div>
+</div>
+
+<div <%if @map_sq_short_37.present?%> id='<%=@map_sq_short_37.id%>'<%end%> class="sq-short-37">
+  <div class="progress"></div>
+</div>
+<div <%if @map_sq_short_38.present?%> id='<%=@map_sq_short_38.id%>'<%end%> class="sq-short-38">
+  <div class="progress"></div>
+</div>
+<div <%if @map_sq_short_39.present?%> id='<%=@map_sq_short_39.id%>'<%end%> class="sq-short-39">
+  <div class="progress"></div>
+</div>
+
+
+
+<div <%if @map_big_sq_6.present?%> id='<%=@map_big_sq_6.id%>'<%end%> class="big-sq-6">
+<div class="progress"></div>
+</div>
+
+<div <%if @map_big_sq_7.present?%> id='<%=@map_big_sq_7.id%>'<%end%> class="big-sq-7">
+<div class="progress"></div>
+</div>
+
+<div <%if @map_big_sq_8.present?%> id='<%=@map_big_sq_8.id%>'<%end%> class="big-sq-8">
+<div class="progress"></div>
+</div>
+
+<div <%if @map_big_sq_9.present?%> id='<%=@map_big_sq_9.id%>'<%end%> class="big-sq-9">
+<div class="progress"></div>
+</div>
+
+
+<div <%if @map_big_sq_10.present?%> id='<%=@map_big_sq_10.id%>'<%end%> class="big-sq-10">
+<div class="progress"></div>
+</div>
+
+
+<div <%if @map_sq_17.present?%> id='<%=@map_sq_17.id%>'<%end%> class="sq-17">
+<div class="progress"></div>
+</div>
+
+<div <%if @map_sq_18.present?%> id='<%=@map_sq_18.id%>'<%end%> class="sq-18">
+<div class="progress"></div>
+</div>
+
+<div <%if @map_sq_19.present?%> id='<%=@map_sq_19.id%>'<%end%> class="sq-19">
+<div class="progress"></div>
+</div>
+
+<div <%if @map_sq_20.present?%> id='<%=@map_sq_20.id%>'<%end%> class="sq-20">
+<div class="progress"></div>
+</div>
+
+<div <%if @map_sq_21.present?%> id='<%=@map_sq_21.id%>'<%end%> class="sq-21">
+<div class="progress"></div>
+</div>
+
+<div <%if @map_sq_22.present?%> id='<%=@map_sq_22.id%>'<%end%> class="sq-22">
+<div class="progress"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<div class="col-md-4 col-xs-4">
+<div class="array">
+<%@map.each do |f|%>
+<div id='<%=f.id%>' class="coffeehouse-single">
+<%if f.avatar.present?%>
+<%=image_tag f.avatar, class:'map-ava'%>
+<%end%>
+<p class="ex-coffee"><span><%=f.type_of_shit%>: </span><%=f.title%></p>
+
+<p><%=f.name_1%></p>
+<p><%=f.name_2%></p>
+<p><%=f.name_3%></p>
+<%if f.picture.present?%>
+<%=image_tag f.picture, class:'map-pic'%>
+<%end%>
+<div class="edit-link">
+
+  </div>
+</div>
+<%end%>
+</div>
+
+<div class="edit-link">
+<%@map.each do |f|%>
+ <%if current_admin  %>
+<div class="id-l" id="<%=f.id%>">
+  <%=link_to 'edit', edit_map_path(f) %>
+  </div>
+  <%end%>
+  <%end%>
+</div>
+
+
+
+</div>
+</div>
+</div>
+
+
+
+</div>
+
+
+    <script>
+      function initMap() {
+
+         var styleArray = [
+    {
+      featureType: 'all',
+      stylers: [
+        { saturation: -80 }
+      ]
+    },{
+      featureType: 'road.arterial',
+      elementType: 'geometry',
+      stylers: [
+        { hue: '#00ffee' },
+        { saturation: 50 }
+      ]
+    },{
+      featureType: 'poi.business',
+      elementType: 'labels',
+      stylers: [
+        { visibility: 'off' }
+      ]
+    }
+  ];
+
+
+        var myLatLng = {lat: <%=@fest.latitude%>, lng: <%=@fest.longitude%>};
+
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: myLatLng,
+          scrollwheel: false,
+          zoom: 15,
+          styles: styleArray
+        });
+
+        // Create a marker and set its position.
+        var marker = new google.maps.Marker({
+          map: map,
+          position: myLatLng,
+          title: 'Hello World!'
+        });
+      }
+
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS6v1leQz-ivh7KwUKXAZLnclJuhg2yqE&callback=initMap"
+        async defer></script>
+
+
+
+

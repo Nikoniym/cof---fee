@@ -1,0 +1,157 @@
+<% content_for :page_title_seo, @cup.page_title_seo %>
+<% content_for :page_title, @cup.page_title %>
+<% content_for :description_seo, @cup.description_seo %>
+<% content_for :keywords_seo, @cup.keywords_seo %>
+<div style="margin-top: 10px; margin-left: 9px;" class="row m-c-mar">
+<div class="col-md-12">
+	<div class="row pad-for-header">
+		<div class="col-md-12">
+			<h2 class="cuptitle">чемпионат россии среди команд кофеен</h2>
+
+		</div>
+	</div>
+	<div class="showone" style="text-align: center;">
+	<%@cities.each do |f|%>
+	<%=link_to city_path(f.city_name), class:'nohover' do%>
+		<div class="in-hex">
+	
+<div id="<%= f.city_name %>" class="hexagoncup ">
+<div class="xza">
+	<h2 class="awes"><%=f.city_name%></h2>
+	</div>
+</div>
+<span class="line-span-hex"></span>
+<p class="under-hex"><%=f.date_range%></p>
+</div>
+<%end%>
+	<%end%>
+
+<%= link_to russiancoffeeawards_path do%>
+	<div class="in-hex">
+<div class="hexagoncup ">
+	<div class="xza">
+
+      <%=image_tag '1Artboard 1.png', class:'imgff'%>
+      <h2 style="">финал</h2>
+
+	</div>
+</div>
+<span class="line-span-hex"></span>
+
+<p class="under-hex">9-10  октября</p>
+</div>
+<%end%>
+
+</div>
+<div class="col-md-12 border-under-cup">
+</div>
+
+
+
+
+
+</div>
+
+
+
+</div>
+
+<div id="partial">
+
+</div>
+
+<div  class="row margin-cup-hex">
+
+
+
+<%@cities.each do |f|%>
+
+<%= link_to city_path(f.city_name) do%>
+<div class="col-md-6 col-xs-6 exp-cup-no-p ">
+	<figure class="snip1080 hrenhide">
+	<%=image_tag f.avatar%>
+	
+ <div class="mobile-hh">
+ <div class="wrap-article mob-dif">
+   	 <h2 class="qhead">
+   <%=f.city_name%>
+  </h2>
+  </div>
+  <div class="fixedbl">
+  <%=image_tag f.icon, class:'qaz'%>
+  	 <h2 class="text-center">
+      <%=f.city_name%>
+  </h2>
+  <p style="padding-top: 5px;">  <%=f.date_range%></p>
+ 
+
+  </div>
+  </div>
+</figure>
+</div>
+<%end%>
+<%end%>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="row nopad-cup-more">
+<div class="col-md-3 col-xs-3 ">
+<%=image_tag @cup.photo_1, class:'cup-img photo-single'%>
+</div>
+<div class="col-md-3 col-xs-3">
+<%=image_tag @cup.photo_2, class:'cup-img photo-single'%>
+</div>
+<div class="col-md-3 col-xs-3">
+<%=image_tag @cup.photo_3, class:'cup-img photo-single'%>
+</div>
+<div class="col-md-3 col-xs-3">
+<%=image_tag @cup.photo_4, class:'cup-img photo-single'%>
+</div>
+</div>
+
+<div class="row nopad-cup-more">
+<div class="col-md-12 p-font-f">
+<p><%=@cup.some_text.html_safe%>
+</p>
+</div>
+</div>
+
+<div style="padding-bottom: 50px" class="row nopad-cup-more">
+<div  class="col-md-12 text-center">
+<%=link_to  galeries_path, class:'show-all'  do %>
+<p> ПОСМОТРЕТЬ ВСЕ</p>
+<%end%>
+</div>
+</div>
+
+
+           <div id="boxes">
+
+      <div id="dialog" class="window"  >
+      <div class="row">
+      <div class="col-md-12">
+        <a href="#" class="close"><i class="fa fa-times" aria-hidden="true"></i></a>
+        <img class="forsrc hidden" >
+
+
+ 
+
+          </div>
+   
+</div>
+
+  </div>
+
+  
+    
+  <div id="mask"></div>
+</div>

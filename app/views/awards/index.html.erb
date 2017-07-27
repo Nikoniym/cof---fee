@@ -1,0 +1,110 @@
+<% content_for :page_title_seo, @awardpage.page_title_seo %>
+
+<% content_for :description_seo, @awardpage.description_seo %>
+<% content_for :keywords_seo, @awardpage.keywords_seo %>
+<% content_for :page_title, @awardpage.page_title %>
+<div style="width: 100%; overflow: hidden;" class="">
+<div class="">
+
+<figure class="snip1082 i-po-x">
+
+<%=image_tag @awardpage.pic, style:'height: 100%; object-fit: cover;'%>
+
+ 
+ <h3  class="f-asize" style="font-family: 'GilroyLight';">
+    <%=@awardpage.pic_text%>
+  </h3>
+  <div style="    width: 100%;
+    top: 0;
+    /* bottom: -36vh; */
+    height: 50px;
+    position: absolute;
+    padding: 12px;
+    color: #ffffff;
+
+    
+    text-align: center;">
+    <div class="wrap-flex-award">
+     <h3 class="m-s-c" style="     position: relative; 
+    font-family: 'GilroyExtraBold';
+    color: #ffffff;
+     padding-left: 1%; 
+     padding-right: 1%; 
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+    display: block;
+    font-size: 1.7em;">
+    <%=@awardpage.pic_title%>
+     
+  </h3>
+  </div>
+    </div>
+</figure>
+
+
+
+
+</div>
+</div>
+
+<div style="padding-bottom: 50px;" class="row no-margin">
+<div class="col-md-12 awa-p">
+<p class="awa-p"> <%=@awardpage.some_text.html_safe%> </p>
+</div>
+</div>
+
+
+
+
+<div class="row">
+
+	<%@awards.each do |award|%>
+		<div style="padding-bottom: 20px;" class="row">
+		<div class="col-md-12 no-pfor-12">
+		<div class="border-p">
+  			<p class="paprt-p"><%=award.title%></p>
+  			</div>
+      <p class="description_award"><%= award.description %></p>
+  			</div>
+  			</div>
+
+		<% @win = award.winners.order(num: :asc) %>
+	
+    <% @win.each_slice(4) do |f|%>
+<div class="row">
+<% f.each do |f|%>
+		<div style="padding-bottom: 20px;" class="col-md-3 col-xs-3 no-p-xs-a">
+					<figure class="snip1080 sp-aw">
+
+	<%=image_tag f.avatar, class:'fitimg'%>
+ 
+  <div  class='hoverdiv' >
+  
+ 
+  <div style="position: relative; bottom:0; 
+    right: 0;  " class="setbottom">
+  <p class="award-name"> <%= f.name %></p>
+  <p class="work-aw"><%=f.work%></p>
+</div>
+  </div>
+</figure>
+
+
+			
+
+		
+		</div>
+     <%end%>
+    </div>
+
+
+
+
+  <%end%>
+	<%end%>
+	</div>
+
+

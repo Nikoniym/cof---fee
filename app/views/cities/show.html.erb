@@ -1,0 +1,217 @@
+<% content_for :page_title_seo, @city.page_title_seo %>
+
+<% content_for :description_seo, @city.description_seo %>
+<% content_for :keywords_seo, @city.keywords_seo %>
+
+
+
+<%if @city.page_title.present?%>
+<% content_for :page_title, @city.page_title %>
+<%end%>
+<div style="" class="cupdiv">
+<div class="">
+
+<figure style="background-image: url('<%= asset_path @city.avatar %>');" class="snip1082 hz-cup i-po-x">
+ 
+
+  <div class="cuppic s-c-g-h" style="    width: 100%;
+    top: 0;
+    /* bottom: -36vh; */
+    height: 50px;
+    position: absolute;
+    padding: 12px;
+    color: #ffffff;
+
+    
+    text-align: center;">
+    <div class=" mob-city">
+     <h3 class="m-s-c" style="     position: relative; 
+    font-family: 'GilroyExtraBold';
+    color: #ffffff;
+    padding-left: 5%; 
+     padding-right: 5%;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+    display: block;
+    font-size: 1.7em;
+    ">
+    <%=@city.title%> 
+  </h3>
+  </div>
+    </div>
+   
+      <h2 class="cityh"><%=@city.city_name%></h2>
+
+  <p class="cityp"><%=@city.date_range%></p>
+</figure>
+
+
+
+
+</div>
+</div>
+
+<div class="row no-margin">
+<div class="col-md-12 descy">
+	<p>
+		<%=@city.body.html_safe %>
+	</p>
+</div>
+</div>
+<%= render'festivals/timetable'%>
+<div style="padding-bottom: 50px; margin-top: 50px" class="row">
+<div class="col-md-12">
+<div style="text-align: center; padding-bottom: 20px;">
+    <a href="<%=@city.link_fb%>" target="_blank" class="join-fb-partial"><p><i class="fa fa-facebook" aria-hidden="true"></i> подписаться</p></a>
+   <a href="<%=@city.link_vk%>" target="_blank" class="join-vk-partial"><p><i class="fa fa-vk" aria-hidden="true"></i> подписаться</p></a>
+
+   </div>
+   <div style="text-align: center;">
+   	<a target="_blank" href="<%=@city.rules_link%>" class="rules"><p>правила</p></a>
+   <a href="<%=@city.link_doc%>" target="_blank" class="send"><p></i> подать заявку</p></a>
+   </div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-6">
+  <div class="">
+        <div class="border-p fuck-border">
+        <p class="paprt-p adress-c-m ">адрес</p>
+        </div>
+  </div>
+
+  <p  class="cityadress"><%=@city.adress%></p>
+
+<a target="_blank" href="http://maps.google.com/?q=<%=@city.adress%>">
+ <div id="map"></div>
+ </a>
+
+
+</div>
+<div class="col-md-6">
+  <div class="">
+        <div class="border-p">
+        <p class="paprt-p">faq</p>
+        </div>
+  </div>
+    <div style="padding-bottom: 50px;" class="row">
+    <div class="col-md-12">
+    <%@faq.each do |f|%>
+                       <div class="article-faq">
+        <div class="item-sh row">
+          <div class="col-xs-12">
+            <p class="title"><%=f.question%></p>
+          </div>
+     
+        </div>
+        <div class="description-faq row">
+         
+          <div class="col-xs-12">
+         
+            <p class="pubdate">- <%=f.answer%></p>
+          </div>
+     
+        </div>
+      </div>
+      <%end%>
+
+
+
+
+
+    </div>
+  </div>
+</div>
+</div>
+
+           <div id="boxes">
+
+      <div id="dialogrules" class="window"  style="overflow-y:scroll;" >
+      <div class="row">
+      <div class="col-md-12">
+        <a href="#" class="close"><i class="fa fa-times" aria-hidden="true"></i></a>
+     <div class="row">
+     <div class="col-md-12">
+     <div  class="rulesview">
+       <%if @city.rules.present?%>
+     <%=@city.rules.html_safe%>
+     <%end%>
+
+     </div>
+
+     </div>
+     </div>
+
+
+ 
+
+          </div>
+   
+</div>
+
+  </div>
+
+  
+    
+  <div id="mask"></div>
+</div>
+
+
+
+
+
+    <script>
+      function initMap() {
+
+         var styleArray = [
+    {
+      featureType: 'all',
+      stylers: [
+        { saturation: -80 }
+      ]
+    },{
+      featureType: 'road.arterial',
+      elementType: 'geometry',
+      stylers: [
+        { hue: '#00ffee' },
+        { saturation: 50 }
+      ]
+    },{
+      featureType: 'poi.business',
+      elementType: 'labels',
+      stylers: [
+        { visibility: 'off' }
+      ]
+    }
+  ];
+
+
+        var myLatLng = {lat: <%=@city.latitude%>, lng: <%=@city.longitude%>};
+
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: myLatLng,
+          scrollwheel: false,
+          zoom: 15,
+          styles: styleArray
+        });
+
+        // Create a marker and set its position.
+        var marker = new google.maps.Marker({
+          map: map,
+          position: myLatLng,
+          title: 'Hello World!'
+        });
+      }
+
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS6v1leQz-ivh7KwUKXAZLnclJuhg2yqE&callback=initMap"
+        async defer></script>
+
+
+

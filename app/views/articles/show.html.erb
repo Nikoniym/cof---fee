@@ -1,0 +1,82 @@
+<% content_for :og_title, @article.title %>
+<% content_for :og_descr, @article.short %>
+<% content_for :page_title, "RUSSIAN COFFEE NEWS" %>
+<% content_for :page_title_seo, @article.page_title_seo %>
+<% content_for :description_seo, @article.description_seo %>
+<% content_for :keywords_seo, @article.keywords_seo %>
+
+
+<div id="fb-root"></div>
+<script>
+
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+<div style="width: 100%; overflow: hidden;" class="">
+<div class="">
+
+<figure class="snip1082">
+
+
+ 
+<%=image_tag @article.pic_for_a, style:'height: 100%; object-fit: cover;'%>
+
+</figure>
+
+
+
+
+</div>
+</div>
+<div class="row no-margin">
+<div class="col-md-12 descy">
+	<p>
+		<%=@article.body.html_safe %>
+	</p>
+</div>
+
+<div class="buttons-row">
+<div class="soc-b vk-s">
+
+</div>
+
+<div class="soc-b fb-social-a">
+	
+	<script type="text/javascript">
+		function facecl(){
+
+  FB.init({
+    appId      : '966508383486294',
+    status     : true,
+    xfbml      : true,
+    version    : 'v2.9' // or v2.6, v2.5, v2.4, v2.3
+  });
+ FB.ui({
+ 
+ 	
+    method: 'share',
+    href: '<%=request.original_url%>'
+  }, function(response){});
+};
+	</script>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-12">
+<div style="text-align: center; padding-bottom: 40px;">
+    <a  onclick="facecl();"  class="join-fb trig-f"><p><i class="fa fa-facebook" aria-hidden="true"></i> поделиться</p></a>
+   <a target="_blank" href="http://vk.com/share.php?url=<%=request.original_url%>"  class="join-vk trig-vk"><p><i class="fa fa-vk" aria-hidden="true"></i> поделиться</p></a>
+   </div>
+</div>
+	
+</div>
+
+</div>

@@ -1,0 +1,72 @@
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="home">
+    <%if @sevents.length > 0%>
+        <%@sevents[0..3].each do |f|%>
+            <div class="article current">
+              <div class="item-sh row">
+                <div class="col-xs-3 nopadding-for-xs time-s width_item">
+                  <p class="source"><%=f.time_range%></p>
+                </div>
+                <div class="col-xs-3 col-md-3 nopadding-for-xs">
+                  <p class="pubdate"><%=f.place%></p>
+                </div>
+                <div class="col-xs-6 nopadding-for-xs">
+                  <p class="title"><%=f.title%></p>
+                </div>
+              </div>
+              <div class="description row">
+
+                <div class="col-xs-6 col-md-4 nopadding-for-xs">
+                  <%= image_tag f.avatar, class:'sh-img'%>
+
+                </div>
+                <div class="col-xs-6 col-md-8 no-p-m-s nopadding-for-xs">
+
+                  <p><%=f.body.html_safe%></p>
+                </div>
+              </div>
+            </div>
+        <%end%>
+    <%end%>
+
+
+
+
+    <div style="padding-top: 30px;" class="">
+      <% if @sevents[4..@sevents.length].present?%>
+        <a class="text-more" >развернуть <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+      <% end %>
+    </div>
+    <div class="hidden-sh">
+      <%if @sevents.length > 3%>
+          <%@sevents[4..@sevents.length].each do |f|%>
+              <div class="article current">
+                <div class="item-sh row">
+                  <div class="col-xs-3 nopadding-for-xs time-s width_item">
+                    <p class="source"><%=f.time_range%></p>
+                  </div>
+                  <div class="col-xs-3 col-md-3 nopadding-for-xs">
+                    <p class="pubdate"><%=f.place%></p>
+                  </div>
+                  <div class="col-xs-6 nopadding-for-xs">
+                    <p class="title"><%=f.title%></p>
+                  </div>
+                </div>
+                <div class="description row">
+
+                  <div class="col-xs-6 col-md-4 nopadding-for-xs">
+                    <%= image_tag f.avatar, class:'sh-img'%>
+
+                  </div>
+                  <div class="col-xs-6 col-md-8 no-p-m-s nopadding-for-xs">
+
+                    <p><%=f.body.html_safe%></p>
+                  </div>
+                </div>
+              </div>
+          <%end%>
+      <%end%>
+
+    </div>
+  </div>
+</div>
