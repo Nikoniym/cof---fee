@@ -8,7 +8,7 @@ class Partner < ApplicationRecord
   serialize :city, Array
 
   def city_enum
-    City.all.map { |c| [ c.city_name, c.id ] }
+    City.all.map { |c| [ c.city_name ] }
   end
 
 

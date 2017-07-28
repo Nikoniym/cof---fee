@@ -15,8 +15,9 @@ def set_partners
 		@banners = Banner.order(:position).where(award_page: true).limit(3)
 	  @partners = Partner.order(award_num: :asc).where(award_page: true)
 	elsif controller_name ==  'cities'  && action_name == 'show'
-		cities_p = City.find_by(city_name: params[:id]).id
+		cities_p = City.find_by(city_name: params[:id]).city_name
 		@partners = Partner.order(city_num: :asc).where(["city LIKE ?", "%#{cities_p}%"])
+		@banners = Banner.order(:position).where(cup_page: true).limit(3)
 	elsif controller_name ==  'cities'
 		@banners = Banner.order(:position).where(cup_page: true).limit(3)
 	elsif controller_name ==  'galeries'

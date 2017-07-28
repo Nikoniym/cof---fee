@@ -395,7 +395,7 @@
 <%@map.each do |f|%>
 <div id='<%=f.id%>' class="coffeehouse-single">
 <%if f.avatar.present?%>
-<%=image_tag f.avatar, class:'map-ava'%>
+<%=image_tag f.avatar.url(:thumb), class:'map-ava'%>
 <%end%>
 <p class="ex-coffee"><span><%=f.type_of_shit%>: </span><%=f.title%></p>
 
@@ -403,7 +403,7 @@
 <p><%=f.name_2%></p>
 <p><%=f.name_3%></p>
 <%if f.picture.present?%>
-<%=image_tag f.picture, class:'map-pic'%>
+<%=image_tag f.picture.url(:thumb), class:'map-pic'%>
 <%end%>
 <div class="edit-link">
 
