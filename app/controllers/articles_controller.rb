@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   def index
    
-  	@articles = Article.order(position: :asc).where(show_on_main: true)
+  	@articles = Article.order(position_main: :asc).where(show_on_main: true)
   	@firstslide = MainPage.find_by_id(1)
   end
    def show

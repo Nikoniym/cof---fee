@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170727044049) do
+ActiveRecord::Schema.define(version: 20170728093455) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -93,6 +93,8 @@ ActiveRecord::Schema.define(version: 20170727044049) do
     t.datetime "pic_for_a_updated_at"
     t.integer  "num"
     t.integer  "position"
+    t.integer  "position_main"
+    t.boolean  "big_main"
   end
 
   create_table "award_pages", force: :cascade do |t|

@@ -2095,12 +2095,18 @@ config.model Article do
         field :position do
           label "Позиция"
         end
+        field :position_main do
+          label "Позиция на главной"
+        end
         field :show_on_main do
           label "На главную?"
         end
 
         field :big do
           label "Прямоугольник?"
+        end
+        field :big_main do
+          label "Прямоугольник на главной?"
         end
         field :short do
           label "Короткое описание"
@@ -2147,13 +2153,13 @@ config.model Article do
       field :position do
         label "Позиция"
       end
+      field :position_main do
+        label "Позиция на главной"
+      end
       field :avatar do
         label "Изображение"
         delete_method  :delete_avatar
       end
-
-
-
       field :short do
         label "Короткое описание"
       end
@@ -2186,6 +2192,9 @@ config.model Article do
 
        field :big do
         label "Прямоугольник?"
+       end
+      field :big_main do
+        label "Прямоугольник на главную?"
       end
 
       field :body, :ck_editor do

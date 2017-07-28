@@ -68,7 +68,7 @@
     <% @articles.limit(5).each do |f| %>
  
   
-      <div class="  article-sq <%if f.big == true %> col-md-8 col-xs-12 <%else%> col-md-4 col-xs-6 <%end%>" >
+      <div class="  article-sq <%if f.big_main == true %> col-md-8 col-xs-12 <%else%> col-md-4 col-xs-6 <%end%>" >
 
 	<figure class="snip1080">
 	<%= image_tag f.avatar%>
@@ -76,14 +76,14 @@
   <%=link_to   article_path(f) , class:'fucken-a' do%>
         <%end%>
         <div class="wrap-article">
-  	<h2 class="text-center v2v <%if f.big == true %>truncatebig <%else%>truncate<%end%>">
-     <%if f.big == true %>
+  	<h2 class="text-center v2v <%if f.big_main == true %>truncatebig <%else%>truncate<%end%>">
+     <%if f.big_main == true %>
     <%=truncate(f.title, :length => 70) %>
     <%else%>
     <%=truncate(f.title, :length => 40) %>
     <%end%>
   </h2>
-  <h2 class="text-center h2h  <%if f.big == true %>truncatebig <%else%>truncate<%end%>">
+  <h2 class="text-center h2h  <%if f.big_main == true %>truncatebig <%else%>truncate<%end%>">
    <%=f.title%>
   </h2>
   </div>
